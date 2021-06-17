@@ -2,16 +2,18 @@
 //  RightloomApp.swift
 //  Shared
 //
-//  Created by Satoshi Kawabata on 2021/06/02.
-//
 
 import SwiftUI
 
 @main
 struct RightloomApp: App {
+    let authInfo = AuthInfo()
+    let settings = Settings()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(authInfo)
+                .environmentObject(settings)
         }
     }
 }

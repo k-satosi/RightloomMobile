@@ -13,6 +13,18 @@
 		0E01B843266682FD0073D04C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B82E266682FC0073D04C /* ContentView.swift */; };
 		0E01B844266682FD0073D04C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E01B82F266682FD0073D04C /* Assets.xcassets */; };
 		0E01B845266682FD0073D04C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E01B82F266682FD0073D04C /* Assets.xcassets */; };
+		0E01B869266CFF6A0073D04C /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B868266CFF6A0073D04C /* PhotoGridView.swift */; };
+		0E01B86A266CFF6A0073D04C /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B868266CFF6A0073D04C /* PhotoGridView.swift */; };
+		0E01B86C266E76F10073D04C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B86B266E76F10073D04C /* LoginView.swift */; };
+		0E01B86D266E76F10073D04C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B86B266E76F10073D04C /* LoginView.swift */; };
+		0E01B86F266E7B6C0073D04C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B86E266E7B6C0073D04C /* Auth.swift */; };
+		0E01B870266E7B6C0073D04C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B86E266E7B6C0073D04C /* Auth.swift */; };
+		0E01B872266FD71C0073D04C /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B871266FD71C0073D04C /* PhotoDetail.swift */; };
+		0E01B873266FD71C0073D04C /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B871266FD71C0073D04C /* PhotoDetail.swift */; };
+		0E01B877266FD79C0073D04C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B876266FD79C0073D04C /* Photo.swift */; };
+		0E01B878266FD79C0073D04C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01B876266FD79C0073D04C /* Photo.swift */; };
+		0E08BCBA2672560C00293A1D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E08BCB92672560C00293A1D /* Settings.swift */; };
+		0E08BCBB2672560C00293A1D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E08BCB92672560C00293A1D /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,12 @@
 		0E01B83C266682FD0073D04C /* Rightloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rightloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E01B83E266682FD0073D04C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E01B83F266682FD0073D04C /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		0E01B868266CFF6A0073D04C /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
+		0E01B86B266E76F10073D04C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0E01B86E266E7B6C0073D04C /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		0E01B871266FD71C0073D04C /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
+		0E01B876266FD79C0073D04C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		0E08BCB92672560C00293A1D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +75,9 @@
 		0E01B82C266682FC0073D04C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				0E01B875266FD7480073D04C /* Model */,
+				0E01B874266FD7410073D04C /* Views */,
 				0E01B82D266682FC0073D04C /* RightloomApp.swift */,
-				0E01B82E266682FC0073D04C /* ContentView.swift */,
 				0E01B82F266682FD0073D04C /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -88,6 +107,27 @@
 				0E01B83F266682FD0073D04C /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		0E01B874266FD7410073D04C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E01B82E266682FC0073D04C /* ContentView.swift */,
+				0E01B86B266E76F10073D04C /* LoginView.swift */,
+				0E01B871266FD71C0073D04C /* PhotoDetail.swift */,
+				0E01B868266CFF6A0073D04C /* PhotoGridView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0E01B875266FD7480073D04C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E01B86E266E7B6C0073D04C /* Auth.swift */,
+				0E01B876266FD79C0073D04C /* Photo.swift */,
+				0E08BCB92672560C00293A1D /* Settings.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,8 +227,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E01B877266FD79C0073D04C /* Photo.swift in Sources */,
+				0E01B869266CFF6A0073D04C /* PhotoGridView.swift in Sources */,
+				0E08BCBA2672560C00293A1D /* Settings.swift in Sources */,
 				0E01B842266682FD0073D04C /* ContentView.swift in Sources */,
+				0E01B86C266E76F10073D04C /* LoginView.swift in Sources */,
 				0E01B840266682FD0073D04C /* RightloomApp.swift in Sources */,
+				0E01B872266FD71C0073D04C /* PhotoDetail.swift in Sources */,
+				0E01B86F266E7B6C0073D04C /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,8 +242,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E01B878266FD79C0073D04C /* Photo.swift in Sources */,
+				0E01B86A266CFF6A0073D04C /* PhotoGridView.swift in Sources */,
+				0E08BCBB2672560C00293A1D /* Settings.swift in Sources */,
 				0E01B843266682FD0073D04C /* ContentView.swift in Sources */,
+				0E01B86D266E76F10073D04C /* LoginView.swift in Sources */,
 				0E01B841266682FD0073D04C /* RightloomApp.swift in Sources */,
+				0E01B873266FD71C0073D04C /* PhotoDetail.swift in Sources */,
+				0E01B870266E7B6C0073D04C /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
