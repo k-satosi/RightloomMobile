@@ -64,16 +64,16 @@ func downloadImageAsync(url: URL, completion: @escaping (UIImage?) -> Void) {
 struct PhotoGridView: View {
     @State var photos = [Photo]()
     @State var images = [UIImage?]()
-    
+
     @State var navigationViewIsActive = false
     @State var selectedPhoto: Photo? = nil
-    
+
     @State var isShowPhotoLibrary = false
     @State var pickedImage = UIImage()
 
     @EnvironmentObject var authInfo: AuthInfo
     @EnvironmentObject var settings: Settings
-    
+
     func fetchPhotos(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url)
@@ -82,16 +82,21 @@ struct PhotoGridView: View {
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             if let data = data {
-                let _photos = try! JSONDecoder().decode([Photo].self, from: data)
-                // dump(_photos)
-                self.images.removeAll()
-                self.photos.removeAll()
-                for num in 0..<_photos.count {
-                    let url = settings.serverURL + "/" + _photos[num].path
-                    downloadImageAsync(url: URL(string: url)!) {image in
-                        self.images.append(image)
-                        self.photos.append(_photos[num])
+                do {
+                    let _photos = try JSONDecoder().decode([Photo].self, from: data)
+                    // dump(_photos)
+                    self.images.removeAll()
+                    self.photos.removeAll()
+                    for num in 0..<_photos.count {
+                        let url = settings.serverURL + "/" + _photos[num].path
+                        downloadImageAsync(url: URL(string: url)!) {image in
+                            self.images.append(image)
+                            self.photos.append(_photos[num])
+                        }
                     }
+                }
+                catch {
+                    print(error)
                 }
             }
         })
@@ -135,7 +140,6 @@ struct PhotoGridView: View {
                     fetchPhotos(urlString: url)
                 }
             }
-
         }, content: {
             ImagePicker(sourceType: .photoLibrary, selectedImage:  self.$pickedImage)
         })

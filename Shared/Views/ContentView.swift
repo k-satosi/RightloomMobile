@@ -8,13 +8,22 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            LoginView()
+            TabView {
+                LoginView().tabItem {
+                    Image(systemName: "person.crop.circle")
+                    Text("Login")
+                }
+                RegisterView().tabItem {
+                    Image(systemName: "person.crop.circle.badge.plus")
+                    Text("Register")
+                }
+            }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(AuthInfo()).environmentObject(Settings())
     }
 }
