@@ -17,6 +17,10 @@ struct ContentView: View {
                     Image(systemName: "person.crop.circle.badge.plus")
                     Text("Register")
                 }
+                SettingsView().tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }

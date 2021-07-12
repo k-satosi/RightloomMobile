@@ -5,8 +5,8 @@
 
 import SwiftUI
 
-func uploadImage(token: String, paramName: String, fileName: String, image: UIImage, completion: @escaping (Error?)->Void) {
-    let url = URL(string: "http://localhost/api/photos/")
+func uploadImage(urlString: String, token: String, paramName: String, fileName: String, image: UIImage, completion: @escaping (Error?)->Void) {
+    let url = URL(string: urlString)
 
     // generate boundary string using a unique per-app string
     let boundary = UUID().uuidString
@@ -134,7 +134,8 @@ struct PhotoGridView: View {
         }
         .sheet(isPresented: $isShowPhotoLibrary, onDismiss: {
             // upload image
-            uploadImage(token: authInfo.token, paramName: "file", fileName: "aaa.jpeg", image: self.pickedImage) { error in
+            let url = settings.serverURL + "/api/photos/"
+            uploadImage(urlString: url, token: authInfo.token, paramName: "file", fileName: "aaa.jpeg", image: self.pickedImage) { error in
                 if error == nil {
                     let url = settings.serverURL + "/api/photos"
                     fetchPhotos(urlString: url)
